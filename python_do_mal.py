@@ -25,7 +25,7 @@ print(f"A soma dos números é: {resultado}")
 def subtracao_lista(lista):
     subtracao = 0
     for numero in lista:
-        subtracao += int(numero)
+        subtracao -= int(numero)
     return subtracao
 
 numeros = ['1', '2', '3', '4', '5']
