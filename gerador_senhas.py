@@ -10,6 +10,7 @@ def gerar_senha():
     incluir_maiusculas = input("Incluir letras maiúsculas? (s/n): ").lower == 's'
     incluir_numeros = input("Incluir números? (s/n): ").lower() == 's'
     incluir_simbolos = input("Incluir símbolos? (s/n)").lower() == 's'
+    incluir_minusculas = input("Incluir minúsculas? (s/n)").lower() == 's'
     
     # Conjunto Caracteres
     caracteres = string.ascii_lowercase
@@ -19,10 +20,12 @@ def gerar_senha():
         caracteres += string.digits
     if incluir_simbolos:
         caracteres += string.punctuation
+    if incluir_minusculas:
+        caracteres += string.ascii_letters
         
     # Geração de senha
     if not caracteres:
-        print("Você precisa selecionar pelo menos um tipo de caractere")
+        print("Você precisa selecionar pelo menos um tipo de caracter")
         return
     
     senha = ''.join(random.choice(caracteres) for _ in range(comprimento))
