@@ -6,7 +6,7 @@ def jogo_pedra_papel_tesoura():
     print("Bem-vindo ao Pedra, papel e tesoura!")
     
     while True:
-        jogador = input("Escolha pedra, papel ou tesoura para jogar (ou 'sair' para encerrar): ").strip().lower()
+        jogador = input("Escolha pedra, papel ou tesoura para jogar (ou 'sair' para encerrar): ").lower()
         
         if jogador == "sair":
             print("Obrigado por jogar!")
