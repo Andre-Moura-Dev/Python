@@ -9,8 +9,8 @@ def gerar_senha():
     comprimento = int(input("Informe o comprimento desejado para a senha: "))
     incluir_maiusculas = input("Incluir letras maiúsculas? (s/n): ").lower == 's'
     incluir_numeros = input("Incluir números? (s/n): ").lower() == 's'
-    incluir_simbolos = input("Incluir símbolos? (s/n)").lower() == 's'
-    incluir_minusculas = input("Incluir minúsculas? (s/n)").lower() == 's'
+    incluir_simbolos = input("Incluir símbolos? (s/n): ").lower() == 's'
+    incluir_minusculas = input("Incluir minúsculas? (s/n): ").lower() == 's'
     
     # Conjunto Caracteres
     caracteres = string.ascii_lowercase
