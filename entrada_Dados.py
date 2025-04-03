@@ -2,8 +2,25 @@
 def entrada():
     nome = input("Digite seu nome: ")
     idade = int(input("Digite sua idade: "))
+    peso = float(input("Digite o seu peso: "))
+    altura = float(input("Digite a sua altura"))
     curso = input("Digite seu curso: ")
-    return nome, idade, curso
+    return nome, idade, curso, peso, altura
+
+# calcular imc
+def calcular_imc(peso, altura):
+    imc = peso / (altura ** 2)
+    print(f"\nIMC: {imc:.2f}")
+    
+    if imc < 18.5:
+        print("Classificação: Magreza")
+    elif imc < 24.9:
+        print("Classificação: Normal")
+    elif imc < 29.9:
+        print("Classificação: Sobrepeso")
+    else:
+        print("Classificação: Obesidade")        
+    
 
 # calcular média
 def calcular_media(notas):
@@ -18,14 +35,15 @@ def sair():
 
 # função principal
 def main():
-    nome, idade, curso = entrada()
+    nome, idade, curso, peso, altura = entrada()
     notas = []
     
     while True:
         print("\nEscolha uma opção:")
         print("1 - Adicionar nota")
         print("2 - Calcular média")
-        print("3 - Sair")
+        print("3 - Calcular imc")
+        print("4 - Sair")
         
         opcao = input("Opção: ")
         
@@ -42,12 +60,15 @@ def main():
             print(f"Curso: {curso}")
             print(f"Média: {media:.2f}")
             
+        elif opcao == '3':
+            calcular_imc(peso, altura)
+            
             if media >= 7:
                 print("Aprovado!")
             else:
                 print("Reprovado!")
             
-        elif opcao == '3':
+        elif opcao == '4':
             sair()
         else:
             print("Opção inválida. Tente novamente.")
